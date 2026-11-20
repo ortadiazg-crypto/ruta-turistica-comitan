@@ -324,7 +324,8 @@ function crearAtractivos() {
   document.getElementById('abrirAtractivos').addEventListener('click', e => { e.preventDefault(); abrir(); });
   document.getElementById('cerrarAtractivos').addEventListener('click', () => panel.close());
   panel.addEventListener('click', e => { if (e.target === panel) panel.close(); }); // clic fuera del cuadro
-  if (location.hash === '#atractivos') abrir();
+  // Si la dirección quedó con #atractivos (de versiones anteriores), se limpia sin abrir la ventana
+  if (location.hash === '#atractivos') history.replaceState(null, '', location.pathname + location.search);
 }
 
 /* ---------- arranque ---------- */

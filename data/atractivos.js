@@ -4,12 +4,12 @@ const ATRACTIVOS = [
   {
     "titulo": "Atractivos turísticos cercanos a Comitán",
     "destinos": [
-      { "nombre": "Junchavín", "km": "2", "tiempo": "7 min", "consultaMapa": "Zona Arqueológica Junchavín, Comitán, Chiapas" },
-      { "nombre": "Tenam Puente", "km": "11.6", "tiempo": "18 min", "consultaMapa": "Zona Arqueológica Tenam Puente, Chiapas" },
-      { "nombre": "Chukumaltic", "km": "26.9", "tiempo": "34 min", "consultaMapa": "Zona Arqueológica Chukumaltic, Chiapas" },
-      { "nombre": "Uninajab", "km": "27.5", "tiempo": "37 min", "consultaMapa": "Uninajab, Chiapas" },
+      { "nombre": "Junchavín", "imagen": "img/Atractivos/Junchavin.jpeg", "km": "2", "tiempo": "7 min", "consultaMapa": "Zona Arqueológica Junchavín, Comitán, Chiapas" },
+      { "nombre": "Tenam Puente", "imagen": "img/Atractivos/Tenam_Puente.jpeg", "km": "11.6", "tiempo": "18 min", "consultaMapa": "Zona Arqueológica Tenam Puente, Chiapas" },
+      { "nombre": "Chukumaltic", "imagen": "img/Atractivos/Chucumaltik.jpeg", "km": "26.9", "tiempo": "34 min", "consultaMapa": "Zona Arqueológica Chukumaltic, Chiapas" },
+      { "nombre": "Uninajab", "imagen": "img/Atractivos/Uninajab.jpeg", "km": "27.5", "tiempo": "37 min", "consultaMapa": "Uninajab, Chiapas" },
       { "nombre": "Laguna Koilá", "km": "27.7", "tiempo": "40 min", "consultaMapa": "Laguna Koilá, Chiapas" },
-      { "nombre": "Cascadas del Chiflón", "km": "36.8", "tiempo": "46 min", "consultaMapa": "Cascadas El Chiflón, Chiapas" },
+      { "nombre": "Cascadas del Chiflón", "imagen": "img/Atractivos/Cascada_Chiflon.jpeg", "km": "36.8", "tiempo": "46 min", "consultaMapa": "Cascadas El Chiflón, Chiapas" },
       { "nombre": "Chinkultic", "km": "49", "tiempo": "50 min", "consultaMapa": "Zona Arqueológica Chinkultic, Chiapas" },
       { "nombre": "Xbulanjá", "km": "51.9", "tiempo": "2 h 32 min", "consultaMapa": "Xbulanjá, Chiapas" },
       { "nombre": "Parque Nacional Lagunas de Montebello", "km": "59", "tiempo": "1 h", "consultaMapa": "Parque Nacional Lagunas de Montebello, Chiapas" },

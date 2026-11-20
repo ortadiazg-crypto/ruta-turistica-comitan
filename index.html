@@ -6,7 +6,7 @@
   <title>Ruta Turística de Comitán de Domínguez</title>
   <meta name="description" content="Guía y mapa interactivo del centro histórico de Comitán de Domínguez: templos, museos, mercado, artesanías y transporte, con ruta en Google Maps.">
   <link rel="icon" type="image/png" href="img/logo_visitcomitan_pag.png">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
 
@@ -769,30 +769,35 @@
     </div>
   </dialog>
 
-  <!-- 3) ATRACTIVOS TURÍSTICOS -->
-  <section class="seccion-atractivos" id="atractivos" aria-labelledby="tituloAtractivos">
-    <h2 id="tituloAtractivos">Atractivos turísticos</h2>
-    <p class="ayuda-mapa">Distancia y tiempo aproximado en auto desde Comitán de Domínguez.</p>
-    <div id="listaAtractivos"></div>
-  </section>
-
   <footer>
     <p>Directorio construido a partir del mapa turístico oficial de Comitán de Domínguez.</p>
   </footer>
+
+  <!-- ATRACTIVOS TURÍSTICOS (ventana flotante que se abre desde el menú de la flor) -->
+  <dialog id="panelAtractivos" class="panel-atractivos" aria-labelledby="tituloAtractivos">
+    <div class="panel-encabezado">
+      <div>
+        <h2 id="tituloAtractivos">Atractivos turísticos</h2>
+        <p>Distancia y tiempo aproximado en auto desde Comitán de Domínguez.</p>
+      </div>
+      <button type="button" class="cerrar-panel" id="cerrarAtractivos" aria-label="Cerrar atractivos turísticos">×</button>
+    </div>
+    <div class="panel-cuerpo" id="listaAtractivos"></div>
+  </dialog>
 
   <!-- MENÚ FLOTANTE (flor de Pueblo Mágico) -->
   <nav class="menu-flor" aria-label="Menú rápido">
     <ul class="menu-flor-opciones" id="opcionesFlor" hidden>
       <li><a href="#mapa">🗺️ Mapa</a></li>
-      <li><a href="#atractivos">🏞️ Atractivos turísticos</a></li>
+      <li><a href="#atractivos" id="abrirAtractivos">🏞️ Atractivos turísticos</a></li>
     </ul>
     <button type="button" class="boton-flor" id="botonFlor" aria-expanded="false" aria-controls="opcionesFlor" aria-label="Abrir menú">
       <img src="img/lugares/flor_pueblomagico.png" alt="">
     </button>
   </nav>
 
-  <script src="data/lugares.js"></script>
-  <script src="data/atractivos.js"></script>
-  <script src="js/script.js"></script>
+  <script src="data/lugares.js?v=2"></script>
+  <script src="data/atractivos.js?v=2"></script>
+  <script src="js/script.js?v=2"></script>
 </body>
 </html>

@@ -276,33 +276,55 @@ function iniciarMenuFlor() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !opciones.hidden) { abrir(false); boton.focus(); } });
 }
 
-/* ---------- atractivos turísticos ---------- */
+/* ---------- atractivos turísticos (ventana flotante con tarjetas) ---------- */
+function crearTarjetaAtractivo(d) {
+  const tarjeta = el('article', 'tarjeta-lugar tarjeta-atractivo');
+  tarjeta.style.setProperty('--color-cat', '#5c2040');
+
+  const figura = el('div', 'tarjeta-imagen');
+  if (d.imagen) figura.appendChild(imagen(d, ''));
+  tarjeta.appendChild(figura);
+
+  const cuerpo = el('div', 'tarjeta-cuerpo');
+  cuerpo.appendChild(el('h3', '', d.nombre));
+  const datos = el('p', 'atractivo-datos');
+  datos.append(el('span', 'atractivo-km', '🚗 ' + d.km + ' km'), el('span', 'atractivo-tiempo', '⏱ ' + d.tiempo));
+  cuerpo.appendChild(datos);
+  if (d.nota) cuerpo.appendChild(el('p', 'atractivo-nota', d.nota));
+
+  const acciones = el('div', 'tarjeta-acciones');
+  const ruta = el('a', 'ir-maps', 'Cómo llegar');
+  ruta.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.consultaMapa || d.nombre)}`;
+  ruta.target = '_blank';
+  ruta.rel = 'noopener noreferrer';
+  ruta.setAttribute('aria-label', 'Cómo llegar a ' + d.nombre + ' en Google Maps');
+  acciones.appendChild(ruta);
+  cuerpo.appendChild(acciones);
+  tarjeta.appendChild(cuerpo);
+  return tarjeta;
+}
+
 function crearAtractivos() {
+  const panel = document.getElementById('panelAtractivos');
   const contenedor = document.getElementById('listaAtractivos');
-  if (typeof ATRACTIVOS === 'undefined') return;
-  ATRACTIVOS.forEach(grupo => {
-    const bloque = el('div', 'grupo-atractivos');
-    bloque.appendChild(el('h3', 'titulo-atractivos', grupo.titulo));
-    const lista = el('ul', 'lista-atractivos');
-    grupo.destinos.forEach(d => {
-      const li = el('li', 'atractivo');
-      const info = el('div', 'atractivo-info');
-      info.appendChild(el('span', 'atractivo-nombre', d.nombre));
-      if (d.nota) info.appendChild(el('span', 'atractivo-nota', d.nota));
-      const datos = el('div', 'atractivo-datos');
-      datos.appendChild(el('span', 'atractivo-km', d.km + ' km'));
-      datos.appendChild(el('span', 'atractivo-tiempo', '⏱ ' + d.tiempo));
-      const ruta = el('a', 'atractivo-ruta', 'Cómo llegar');
-      ruta.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.consultaMapa || d.nombre)}`;
-      ruta.target = '_blank';
-      ruta.rel = 'noopener noreferrer';
-      ruta.setAttribute('aria-label', 'Cómo llegar a ' + d.nombre + ' en Google Maps');
-      li.append(info, datos, ruta);
-      lista.appendChild(li);
+  if (typeof ATRACTIVOS !== 'undefined') {
+    ATRACTIVOS.forEach(grupo => {
+      const seccion = el('section', 'seccion-categoria');
+      const titulo = el('h3', 'titulo-categoria');
+      titulo.style.backgroundColor = '#5c2040';
+      titulo.append(el('span', '', grupo.titulo), el('span', 'titulo-contador', String(grupo.destinos.length)));
+      const grid = el('div', 'lista-lugares');
+      grupo.destinos.forEach(d => grid.appendChild(crearTarjetaAtractivo(d)));
+      seccion.append(titulo, grid);
+      contenedor.appendChild(seccion);
     });
-    bloque.appendChild(lista);
-    contenedor.appendChild(bloque);
-  });
+  }
+
+  const abrir = () => { if (!panel.open) { panel.showModal(); contenedor.scrollTop = 0; } };
+  document.getElementById('abrirAtractivos').addEventListener('click', e => { e.preventDefault(); abrir(); });
+  document.getElementById('cerrarAtractivos').addEventListener('click', () => panel.close());
+  panel.addEventListener('click', e => { if (e.target === panel) panel.close(); }); // clic fuera del cuadro
+  if (location.hash === '#atractivos') abrir();
 }
 
 /* ---------- arranque ---------- */

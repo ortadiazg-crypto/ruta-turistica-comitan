@@ -18,7 +18,7 @@
   --ancho: 1000px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; } /* que la barra fija no tape los títulos */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -64,20 +64,32 @@ body {
       rgba(92, 32, 64, 0.80) 78%,
       var(--vino) 100%);
 }
-/* Barra blanca con los logos oficiales */
+/* Barra con los logos oficiales: fija arriba, transparente sobre la portada
+   y blanca en cuanto se desliza la página (clase .con-fondo, ver script.js) */
 .barra-logos {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 12px clamp(16px, 4vw, 48px);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+/* Sobre la foto: halo blanco para que las letras oscuras de los logos se lean */
+.barra-logos:not(.con-fondo) .logo {
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
+.barra-logos.con-fondo {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .logos-izq { display: flex; align-items: center; gap: clamp(10px, 2vw, 22px); }
 .logo { display: block; width: auto; }
@@ -90,7 +102,7 @@ body {
   50%      { transform: translateY(-7px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .logo-comitan { animation: none; }
+  .logo-comitan, .boton-flor img { animation: none; }
 }
 @media (max-width: 600px) {
   .barra-logos { padding: 8px 16px; gap: 10px; }
@@ -214,6 +226,7 @@ body {
    ========================================================= */
 .contenedor-categorias,
 .seccion-mapa,
+.seccion-atractivos,
 .sin-resultados,
 footer {
   max-width: var(--ancho);
@@ -340,6 +353,112 @@ footer {
 .punto-mapa.atenuado { opacity: 0.18; }
 
 /* =========================================================
+   ATRACTIVOS TURÍSTICOS (distancias desde Comitán)
+   ========================================================= */
+.seccion-atractivos { margin-top: 44px; margin-bottom: 36px; }
+.seccion-atractivos h2 { font-size: 1.25rem; color: var(--vino); margin-bottom: 8px; }
+.grupo-atractivos {
+  background: var(--papel);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  margin-top: 18px;
+}
+.titulo-atractivos {
+  color: #fff;
+  background: var(--vino);
+  padding: 12px 22px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.lista-atractivos { list-style: none; }
+.atractivo {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 8px 18px;
+  padding: 12px 22px;
+  border-top: 1px solid var(--borde);
+}
+.atractivo:first-child { border-top: 0; }
+.atractivo:nth-child(even) { background: var(--tarjeta); }
+.atractivo-info { display: flex; flex-direction: column; }
+.atractivo-nombre { font-weight: 600; color: #2c3e50; }
+.atractivo-nota { font-size: 0.82rem; color: var(--texto-suave); }
+.atractivo-datos { display: flex; gap: 14px; font-size: 0.9rem; white-space: nowrap; }
+.atractivo-km { font-weight: 700; color: var(--vino); min-width: 64px; text-align: right; }
+.atractivo-tiempo { color: var(--texto-suave); min-width: 92px; }
+.atractivo-ruta {
+  font-size: 0.82rem; text-decoration: none; color: var(--vino); white-space: nowrap;
+  border: 1px solid var(--vino); border-radius: 8px; padding: 6px 10px;
+}
+.atractivo-ruta:hover { background: #f8eef3; }
+.atractivo-ruta:focus-visible { outline: 3px solid #f8b133; outline-offset: 2px; }
+@media (max-width: 560px) {
+  .atractivo { grid-template-columns: 1fr auto; padding: 12px 16px; }
+  .atractivo-datos { grid-column: 1; flex-wrap: wrap; }
+  .atractivo-km, .atractivo-tiempo { min-width: 0; text-align: left; }
+  .atractivo-ruta { grid-column: 2; grid-row: 1 / span 2; }
+}
+
+/* =========================================================
+   MENÚ FLOTANTE: FLOR DE PUEBLO MÁGICO (abajo a la derecha)
+   ========================================================= */
+.menu-flor {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.boton-flor {
+  width: 68px;
+  height: 68px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s ease;
+}
+.boton-flor:hover { transform: scale(1.06); }
+.boton-flor:focus-visible { outline: 3px solid #f8b133; outline-offset: 3px; }
+.boton-flor img { width: 52px; height: auto; animation: girar 8s linear infinite; }
+.boton-flor[aria-expanded="true"] img { animation-duration: 2.5s; }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+.menu-flor-opciones {
+  list-style: none;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 6px;
+  animation: aparecer 0.18s ease-out;
+  transform-origin: bottom right;
+}
+.menu-flor-opciones a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: var(--vino);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.menu-flor-opciones a:hover, .menu-flor-opciones a:focus-visible { background: #f8eef3; outline: none; }
+@media (max-width: 600px) {
+  .menu-flor { right: 16px; bottom: 16px; }
+  .boton-flor { width: 58px; height: 58px; }
+  .boton-flor img { width: 44px; }
+}
+
+/* =========================================================
    VENTANA DE DETALLE
    ========================================================= */
 #detalleLugar {
@@ -403,7 +522,7 @@ footer { margin-top: 40px; text-align: center; font-size: 0.8rem; color: var(--t
 @media (max-width: 480px) {
   .lista-lugares { grid-template-columns: 1fr; padding: 16px; }
   .encabezado { padding: 0 14px 40px; }
-  .portada { padding: 48px 14px 110px; }
+  .portada { padding: 90px 14px 110px; }
   .detalle-cuerpo { padding: 18px 18px 22px; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -253,6 +253,58 @@ document.getElementById('alejarMapa').addEventListener('click', () => cambiarZoo
 document.getElementById('restablecerMapa').addEventListener('click', () => cambiarZoom(1));
 cambiarZoom(1);
 
+/* ---------- barra de logos: blanca al deslizar ---------- */
+function iniciarBarraLogos() {
+  const barra = document.getElementById('barraLogos');
+  const actualizar = () => barra.classList.toggle('con-fondo', window.scrollY > 30);
+  window.addEventListener('scroll', actualizar, { passive: true });
+  actualizar();
+}
+
+/* ---------- menú flotante de la flor ---------- */
+function iniciarMenuFlor() {
+  const boton = document.getElementById('botonFlor');
+  const opciones = document.getElementById('opcionesFlor');
+  const abrir = (si) => {
+    opciones.hidden = !si;
+    boton.setAttribute('aria-expanded', String(si));
+    boton.setAttribute('aria-label', si ? 'Cerrar menú' : 'Abrir menú');
+  };
+  boton.addEventListener('click', () => abrir(opciones.hidden));
+  opciones.addEventListener('click', e => { if (e.target.closest('a')) abrir(false); });
+  document.addEventListener('click', e => { if (!e.target.closest('.menu-flor')) abrir(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !opciones.hidden) { abrir(false); boton.focus(); } });
+}
+
+/* ---------- atractivos turísticos ---------- */
+function crearAtractivos() {
+  const contenedor = document.getElementById('listaAtractivos');
+  if (typeof ATRACTIVOS === 'undefined') return;
+  ATRACTIVOS.forEach(grupo => {
+    const bloque = el('div', 'grupo-atractivos');
+    bloque.appendChild(el('h3', 'titulo-atractivos', grupo.titulo));
+    const lista = el('ul', 'lista-atractivos');
+    grupo.destinos.forEach(d => {
+      const li = el('li', 'atractivo');
+      const info = el('div', 'atractivo-info');
+      info.appendChild(el('span', 'atractivo-nombre', d.nombre));
+      if (d.nota) info.appendChild(el('span', 'atractivo-nota', d.nota));
+      const datos = el('div', 'atractivo-datos');
+      datos.appendChild(el('span', 'atractivo-km', d.km + ' km'));
+      datos.appendChild(el('span', 'atractivo-tiempo', '⏱ ' + d.tiempo));
+      const ruta = el('a', 'atractivo-ruta', 'Cómo llegar');
+      ruta.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.consultaMapa || d.nombre)}`;
+      ruta.target = '_blank';
+      ruta.rel = 'noopener noreferrer';
+      ruta.setAttribute('aria-label', 'Cómo llegar a ' + d.nombre + ' en Google Maps');
+      li.append(info, datos, ruta);
+      lista.appendChild(li);
+    });
+    bloque.appendChild(lista);
+    contenedor.appendChild(bloque);
+  });
+}
+
 /* ---------- arranque ---------- */
 function iniciar() {
   LUGARES.forEach(g => g.lugares.forEach(l =>
@@ -262,5 +314,8 @@ function iniciar() {
   LUGARES.filter(g => !g.soloMapa).forEach(g => contenedor.appendChild(crearSeccion(g)));
   prepararMapa();
   iniciarFiltrado(LUGARES);
+  crearAtractivos();
+  iniciarBarraLogos();
+  iniciarMenuFlor();
 }
 iniciar();

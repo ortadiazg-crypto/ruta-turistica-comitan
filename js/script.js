@@ -143,7 +143,8 @@ function iniciarFiltrado(datos) {
       grupo.lugares.forEach(lugar => {
         const ok = okCat && (!texto ||
           normalizar(lugar.nombre).includes(texto) ||
-          normalizar(lugar.direccion).includes(texto));
+          normalizar(lugar.direccion).includes(texto) ||
+          (lugar.etiquetas || []).some(e => normalizar(e).includes(texto)));
         if (ok) visibles.add(String(lugar.id));
         if (!grupo.soloMapa) {
           document.getElementById('tarjeta-' + lugar.id).hidden = !ok;

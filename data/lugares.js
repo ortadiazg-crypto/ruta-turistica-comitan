@@ -9,6 +9,7 @@ const LUGARES = [
       {
         "id": 101,
         "nombre": "Tienda Turística",
+        "etiquetas": ["información turística", "informes", "turismo", "turista", "visitante", "ayuda", "guía", "mapa", "folletos", "tienda", "souvenirs", "recuerdos", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown", "presidencia"],
         "direccion": "Av. Central Sur Dr. B. Domínguez (A un costado de Presidencia Municipal)",
         "descripcion": "Punto de información y atención al visitante del centro histórico, ubicado a un costado de la Presidencia Municipal.",
         "consultaMapa": "Tienda Turística, Presidencia Municipal",
@@ -17,6 +18,7 @@ const LUGARES = [
       {
         "id": 102,
         "nombre": "Módulo Turístico",
+        "etiquetas": ["información turística", "informes", "turismo", "turista", "visitante", "ayuda", "guía", "mapa", "folletos", "módulo", "caseta", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown", "parque", "plaza", "jardín", "área verde"],
         "direccion": "Dentro del parque Central, contra esquina del Teatro Junchavín",
         "descripcion": "Módulo de atención al turista dentro del Parque Central, contra esquina del Teatro Junchavín.",
         "consultaMapa": "Módulo de Información Turística, Parque Central",
@@ -32,6 +34,7 @@ const LUGARES = [
       {
         "id": 201,
         "nombre": "Templo de Santo Domingo y Parque Central Benito Juárez",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "parque", "plaza", "jardín", "área verde", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown", "santo domingo", "dominicos", "convento", "benito juárez", "parque central", "kiosco"],
         "direccion": "1a. Av. Oriente Sur, Centro",
         "descripcion": "Templo de origen colonial frente al Parque Central Benito Juárez, uno de los símbolos del centro histórico de Comitán.",
         "consultaMapa": "Templo de Santo Domingo",
@@ -40,6 +43,7 @@ const LUGARES = [
       {
         "id": 202,
         "nombre": "Templo de San José",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "san josé", "barrio"],
         "direccion": "3a. Calle Sur Pte., Barrio de San José",
         "descripcion": "Templo del Barrio de San José, parte del recorrido de arquitectura religiosa del centro histórico.",
         "imagen": "img/lugares/TemploSanJose.jpg"
@@ -47,6 +51,7 @@ const LUGARES = [
       {
         "id": 203,
         "nombre": "Templo y Parque de Guadalupe",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "parque", "plaza", "jardín", "área verde", "guadalupe", "virgen de guadalupe", "guadalupana", "barrio"],
         "direccion": "1a. Calle Sur Poniente, Barrio de Guadalupe",
         "descripcion": "Templo y parque del Barrio de Guadalupe, un rincón tranquilo para caminar y descansar.",
         "consultaMapa": "Templo de Guadalupe",
@@ -55,6 +60,7 @@ const LUGARES = [
       {
         "id": 204,
         "nombre": "Templo del Calvario",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "calvario", "el calvario", "barrio"],
         "direccion": "1a. Calle Nte. Pte. No. 2, Barrio de El Calvario",
         "descripcion": "Templo del Barrio de El Calvario, parte de la ruta de arquitectura religiosa de Comitán.",
         "consultaMapa": "Templo del Calvario",
@@ -63,6 +69,7 @@ const LUGARES = [
       {
         "id": 205,
         "nombre": "Templo San Caralampio y Parque de La Pila",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "parque", "plaza", "jardín", "área verde", "san caralampio", "la pila", "feria", "barrio"],
         "direccion": "3a. Av. Ote. Nte. No. 19, Barrio de La Pila",
         "descripcion": "Templo de San Caralampio junto al Parque de La Pila, en el Barrio de La Pila.",
         "consultaMapa": "Templo de San Caralampio",
@@ -71,6 +78,7 @@ const LUGARES = [
       {
         "id": 206,
         "nombre": "Templo de Jesusito",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "jesusito", "niño jesús", "barrio"],
         "direccion": "2a. Av. Ote. Sur No. 23, Barrio de Jesusito",
         "descripcion": "Templo del Barrio de Jesusito, cerca de la Plaza de las Artesanías.",
         "imagen": "img/lugares/TemploJesusito.jpg"
@@ -78,6 +86,7 @@ const LUGARES = [
       {
         "id": 207,
         "nombre": "Templo de San Sebastián, Casa del Santo Niñito Jesús Fundador y Parque de La Corregidora",
+        "etiquetas": ["templo", "iglesia", "parroquia", "capilla", "santuario", "misa", "religioso", "católico", "colonial", "arquitectura religiosa", "parque", "plaza", "jardín", "área verde", "san sebastián", "niñito fundador", "niño jesús", "santo niñito", "la corregidora", "barrio"],
         "direccion": "1a. Avenida Ote. Sur No. 86, San Sebastián",
         "descripcion": "Templo de San Sebastián, junto a la Casa del Santo Niñito Jesús Fundador y el Parque de La Corregidora.",
         "consultaMapa": "Templo de San Sebastián",
@@ -93,6 +102,7 @@ const LUGARES = [
       {
         "id": 301,
         "nombre": "Mural Génesis e Historia de Los Hombres del Maíz",
+        "etiquetas": ["mural", "pintura", "arte", "obra", "hombres del maíz", "génesis", "maya", "historia", "cultura", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown", "presidencia", "palacio municipal", "ayuntamiento"],
         "direccion": "Avenida Central Norte No. 1 Int. Presidencia Mpal.",
         "descripcion": "Mural al interior de la Presidencia Municipal que narra el origen y la historia de Los Hombres del Maíz.",
         "consultaMapa": "Presidencia Municipal",
@@ -101,6 +111,7 @@ const LUGARES = [
       {
         "id": 302,
         "nombre": "Teatro de la Ciudad Junchavín",
+        "etiquetas": ["teatro", "junchavín", "espectáculos", "obras", "funciones", "conciertos", "música", "danza", "eventos", "cultura", "cultural", "escenario", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "1a. Calle Sur Pte. 2, Centro",
         "descripcion": "Teatro municipal frente al Parque Central, sede de espectáculos y eventos culturales.",
         "imagen": "img/lugares/TeatroJunchavin.jpg"
@@ -108,6 +119,7 @@ const LUGARES = [
       {
         "id": 303,
         "nombre": "Casa Museo Belisario Domínguez",
+        "etiquetas": ["museo", "galería", "exposición", "exhibición", "cultura", "cultural", "historia", "casa museo", "belisario domínguez", "senador", "médico", "biografía", "casa histórica", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Av. Central Sur Dr. B. Domínguez, Centro",
         "descripcion": "Casa donde vivió el médico y senador comiteco Belisario Domínguez, hoy museo dedicado a su vida y legado.",
         "imagen": "img/lugares/CasaMuseo.jpg"
@@ -115,6 +127,7 @@ const LUGARES = [
       {
         "id": 304,
         "nombre": "Centro Cultural Rosario Castellanos",
+        "etiquetas": ["centro cultural", "casa de la cultura", "cultura", "cultural", "arte", "talleres", "eventos", "rosario castellanos", "escritora", "literatura", "biblioteca", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "1a. Calle Sur Poniente, Col. Centro",
         "descripcion": "Espacio cultural en honor a la escritora Rosario Castellanos, con corredores de piedra y actividades artísticas.",
         "consultaMapa": "Centro Cultural Rosario Castellanos",
@@ -123,6 +136,7 @@ const LUGARES = [
       {
         "id": 305,
         "nombre": "Archivo Histórico de Comitán",
+        "etiquetas": ["archivo", "archivo histórico", "documentos", "historia", "investigación", "biblioteca", "hemeroteca", "cultura", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Primera Calle Sur Ote., Centro",
         "descripcion": "Archivo que resguarda documentos de la historia de Comitán.",
         "imagen": "img/lugares/ArchivoHistorico.jpeg"
@@ -130,6 +144,7 @@ const LUGARES = [
       {
         "id": 306,
         "nombre": "Museo Arqueológico de Comitán (INAH)",
+        "etiquetas": ["museo", "galería", "exposición", "exhibición", "cultura", "cultural", "historia", "arqueología", "arqueológico", "inah", "maya", "prehispánico", "piezas", "ruinas", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Primera Calle Sur Ote., Centro",
         "descripcion": "Museo del INAH con piezas arqueológicas de la región de Comitán.",
         "consultaMapa": "Museo Arqueológico de Comitán",
@@ -138,6 +153,7 @@ const LUGARES = [
       {
         "id": 307,
         "nombre": "Oficinas de Correos de México",
+        "etiquetas": ["correos", "correo", "oficina postal", "cartas", "paquetería", "envíos", "servicios", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Av. Central Sur No. 45, Dr. Belisario Domínguez 1a Sección",
         "descripcion": "Oficina postal ubicada en el centro histórico de Comitán.",
         "imagen": "img/lugares/CorreosMexico.jpg"
@@ -145,6 +161,7 @@ const LUGARES = [
       {
         "id": 308,
         "nombre": "Museo de Arte Moderno Hermila Domínguez de Castellanos",
+        "etiquetas": ["museo", "galería", "exposición", "exhibición", "cultura", "cultural", "historia", "arte moderno", "arte", "pintura", "escultura", "hermila domínguez", "galería de arte", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Av. Central Sur, Dr. Belisario Domínguez",
         "descripcion": "Museo de arte moderno que lleva el nombre de Hermila Domínguez de Castellanos.",
         "consultaMapa": "Museo de Arte Moderno Hermila Domínguez de Castellanos",
@@ -153,6 +170,7 @@ const LUGARES = [
       {
         "id": 309,
         "nombre": "Museo de la Ciudad",
+        "etiquetas": ["museo", "galería", "exposición", "exhibición", "cultura", "cultural", "historia", "museo de la ciudad", "historia de comitán", "san josé", "barrio"],
         "direccion": "4a. Sur Ote. No. 5, Barrio de San José",
         "descripcion": "Museo que presenta la historia y el desarrollo de la ciudad de Comitán.",
         "consultaMapa": "Museo de la Ciudad",
@@ -161,6 +179,7 @@ const LUGARES = [
       {
         "id": 310,
         "nombre": "Museo Rosario Castellanos - MUROC",
+        "etiquetas": ["museo", "galería", "exposición", "exhibición", "cultura", "cultural", "historia", "muroc", "rosario castellanos", "escritora", "literatura", "jesusito", "barrio"],
         "direccion": "3ra Calle Sur Oriente No. 12, Barrio de Jesusito",
         "descripcion": "Museo dedicado a la vida y obra de la escritora Rosario Castellanos.",
         "consultaMapa": "Museo Rosario Castellanos",
@@ -169,6 +188,7 @@ const LUGARES = [
       {
         "id": 311,
         "nombre": "Auditorio Municipal Prof. Roberto Bonifaz Caballero",
+        "etiquetas": ["auditorio", "eventos", "conferencias", "espectáculos", "salón", "cultura", "cultural", "roberto bonifaz", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Central Ote. No. 3, Centro",
         "descripcion": "Auditorio municipal para eventos culturales, sociales y comunitarios en el centro.",
         "imagen": "img/lugares/AuditorioMunicipal.jpg"
@@ -183,6 +203,7 @@ const LUGARES = [
       {
         "id": 401,
         "nombre": "Mercado 1 de Mayo",
+        "etiquetas": ["mercado", "mercado municipal", "tianguis", "comida", "fondas", "antojitos", "frutas", "verduras", "compras", "productos locales", "centro", "centro histórico", "zócalo", "primer cuadro", "downtown"],
         "direccion": "Central Ote. No. 14, Centro",
         "descripcion": "Mercado tradicional del centro de Comitán, con productos locales, comida y mercancía de la región.",
         "imagen": "img/lugares/Mercado1mayo.jpg"
@@ -190,6 +211,7 @@ const LUGARES = [
       {
         "id": 402,
         "nombre": "Plaza de las Artesanías",
+        "etiquetas": ["artesanías", "artesanal", "artesanos", "souvenirs", "recuerdos", "regalos", "textiles", "compras", "tienda", "plaza", "mercado de artesanías", "jesusito", "barrio"],
         "direccion": "2a. Avenida Ote. Sur No. 35, Barrio de Jesusito",
         "descripcion": "Plaza con puestos de artesanías, ideal para llevarse un recuerdo de Comitán.",
         "imagen": "img/lugares/PlazaArtesanias.jpeg"
@@ -204,6 +226,7 @@ const LUGARES = [
       {
         "id": 501,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -212,6 +235,7 @@ const LUGARES = [
       {
         "id": 502,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -220,6 +244,7 @@ const LUGARES = [
       {
         "id": 503,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -228,6 +253,7 @@ const LUGARES = [
       {
         "id": 504,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -236,6 +262,7 @@ const LUGARES = [
       {
         "id": 505,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -244,6 +271,7 @@ const LUGARES = [
       {
         "id": 506,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -252,6 +280,7 @@ const LUGARES = [
       {
         "id": 507,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -260,6 +289,7 @@ const LUGARES = [
       {
         "id": 508,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",
@@ -268,6 +298,7 @@ const LUGARES = [
       {
         "id": 509,
         "nombre": "Parada de transporte público",
+        "etiquetas": ["parada", "transporte", "camión", "autobús", "bus", "combi", "colectivo", "taxi", "transporte público"],
         "direccion": "",
         "descripcion": "Parada de transporte público señalada en el plano turístico del centro histórico de Comitán.",
         "imagen": "img/lugares/Parada.jpeg",

@@ -38,7 +38,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: clamp(460px, 78vh, 700px);
-  padding: 56px 20px 120px;
+  padding: 120px 20px 120px;
   text-align: center;
   color: #fff;
   overflow: hidden;
@@ -64,6 +64,41 @@ body {
       rgba(92, 32, 64, 0.80) 78%,
       var(--vino) 100%);
 }
+/* Barra blanca con los logos oficiales */
+.barra-logos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px clamp(16px, 4vw, 48px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.logos-izq { display: flex; align-items: center; gap: clamp(10px, 2vw, 22px); }
+.logo { display: block; width: auto; }
+.logo-visit { height: 46px; }
+.logo-pueblo { height: 54px; }
+.logo-comitan { height: 50px; animation: flotar 3.2s ease-in-out infinite; }
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-comitan { animation: none; }
+}
+@media (max-width: 600px) {
+  .barra-logos { padding: 8px 16px; gap: 10px; }
+  .logo-visit { height: 26px; }
+  .logo-pueblo { height: 32px; }
+  .logo-comitan { height: 28px; }
+}
+
 .portada-contenido { max-width: 760px; text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55); }
 .portada-saludo {
   font-family: Georgia, 'Times New Roman', serif;

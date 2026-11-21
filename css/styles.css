@@ -490,6 +490,13 @@ footer {
 #detalleLugar p { margin-top: 10px; }
 .detalle-categoria { font-size: 0.8rem; color: var(--vino); font-weight: 600; margin-top: 0 !important; }
 .detalle-direccion { color: var(--texto-suave); font-size: 0.92rem; }
+.detalle-transporte {
+  margin-top: 16px; padding: 14px 16px; border-radius: 10px;
+  background: #fff; border: 1px solid var(--borde); border-left: 4px solid #253b85;
+}
+.detalle-transporte h3 { font-size: 0.98rem; color: #253b85; }
+#detalleLugar .detalle-transporte p { margin-top: 6px; font-size: 0.92rem; }
+#detalleLugar .detalle-aviso { font-size: 0.78rem; color: var(--texto-suave); font-style: italic; }
 .cerrar-detalle {
   position: absolute; right: 10px; top: 10px; z-index: 2; width: 44px; height: 44px;
   border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.92); color: var(--vino);

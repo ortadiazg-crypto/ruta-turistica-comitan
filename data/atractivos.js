@@ -1,35 +1,142 @@
 // Distancias y tiempos desde Comitán, tomados del mapa turístico oficial (impreso).
 // "consultaMapa" es lo que se busca en Google Maps para trazar la ruta.
+// "transporte" indica dónde tomar la urbana o el colectivo en Comitán. Los puntos de salida
+// y horarios cambian con el tiempo: conviene confirmarlos con los choferes antes de viajar.
 const ATRACTIVOS = [
   {
     "titulo": "Atractivos turísticos cercanos a Comitán",
     "destinos": [
-      { "nombre": "Junchavín", "imagen": "img/Atractivos/Junchavin.jpeg", "km": "2", "tiempo": "7 min", "consultaMapa": "Zona Arqueológica Junchavín, Comitán, Chiapas" },
-      { "nombre": "Tenam Puente", "imagen": "img/Atractivos/Tenam_Puente.jpeg", "km": "11.6", "tiempo": "18 min", "consultaMapa": "Zona Arqueológica Tenam Puente, Chiapas" },
-      { "nombre": "Chukumaltic", "imagen": "img/Atractivos/Chucumaltik.jpeg", "km": "26.9", "tiempo": "34 min", "consultaMapa": "Zona Arqueológica Chukumaltic, Chiapas" },
-      { "nombre": "Uninajab", "imagen": "img/Atractivos/Uninajab.jpeg", "km": "27.5", "tiempo": "37 min", "consultaMapa": "Uninajab, Chiapas" },
-      { "nombre": "Laguna Koilá", "km": "27.7", "tiempo": "40 min", "consultaMapa": "Laguna Koilá, Chiapas" },
-      { "nombre": "Cascadas del Chiflón", "imagen": "img/Atractivos/Cascada_Chiflon.jpeg", "km": "36.8", "tiempo": "46 min", "consultaMapa": "Cascadas El Chiflón, Chiapas" },
-      { "nombre": "Chinkultic", "km": "49", "tiempo": "50 min", "consultaMapa": "Zona Arqueológica Chinkultic, Chiapas" },
-      { "nombre": "Xbulanjá", "km": "51.9", "tiempo": "2 h 32 min", "consultaMapa": "Xbulanjá, Chiapas" },
-      { "nombre": "Parque Nacional Lagunas de Montebello", "km": "59", "tiempo": "1 h", "consultaMapa": "Parque Nacional Lagunas de Montebello, Chiapas" },
-      { "nombre": "Lago Tziscao", "km": "60", "tiempo": "1 h", "consultaMapa": "Lago Tziscao, Chiapas" },
-      { "nombre": "Copanahuastla", "km": "64.2", "tiempo": "1 h 21 min", "consultaMapa": "Copanahuastla, Chiapas" },
-      { "nombre": "Lagos de Colón", "km": "68.5", "tiempo": "1 h 12 min", "consultaMapa": "Lagos de Colón, Chiapas" },
-      { "nombre": "Las Nubes", "km": "128", "tiempo": "3 h 15 min", "consultaMapa": "Centro Ecoturístico Las Nubes, Chiapas" },
-      { "nombre": "Miramar", "km": "150", "tiempo": "4 h", "nota": "+ 8 km de sendero: 1 h a caballo o 3 h a pie", "consultaMapa": "Laguna Miramar, Chiapas" },
-      { "nombre": "Selvaje", "km": "205", "tiempo": "4 h 30 min", "consultaMapa": "Selvaje, Chiapas" },
-      { "nombre": "Canto de la Selva", "km": "208", "tiempo": "4 h 40 min", "consultaMapa": "Canto de la Selva, Chiapas" },
-      { "nombre": "Las Guacamayas", "km": "248", "tiempo": "5 h", "consultaMapa": "Las Guacamayas, Reforma Agraria, Chiapas" }
+      {
+        "nombre": "Junchavín", "imagen": "img/Atractivos/Junchavin.jpeg", "km": "2", "tiempo": "7 min",
+        "consultaMapa": "Zona Arqueológica Junchavín, Comitán, Chiapas",
+        "descripcion": "Sitio arqueológico maya en la cima de un cerro, muy cerca de la ciudad, con vista panorámica del valle de Comitán.",
+        "transporte": "Por su cercanía, lo más práctico es tomar un taxi en el Parque Central y pedir que te lleve a la zona arqueológica Junchavín. Pasaje de urbana dentro de la ciudad: $11."
+      },
+      {
+        "nombre": "Tenam Puente", "imagen": "img/Atractivos/Tenam_Puente.jpeg", "km": "11.6", "tiempo": "18 min",
+        "consultaMapa": "Zona Arqueológica Tenam Puente, Chiapas",
+        "descripcion": "Zona arqueológica maya sobre un lomerío, con acrópolis, plazas y juegos de pelota rodeados de bosque.",
+        "transporte": "Toma la camioneta colectiva que va al ejido Francisco Sarabia (sale del Boulevard Belisario Domínguez, cerca del mercado) y pide que te bajen en la entrada de la zona arqueológica."
+      },
+      {
+        "nombre": "Chukumaltic", "imagen": "img/Atractivos/Chucumaltik.jpeg", "km": "26.9", "tiempo": "34 min",
+        "consultaMapa": "Chukumaltik, Tzimol, Chiapas",
+        "descripcion": "Cenote en forma de laguna de agua azul intenso, rodeado de vegetación; ideal para nadar y hacer fotos.",
+        "transporte": "Toma un colectivo hacia Tzimol en las terminales del Boulevard Belisario Domínguez (Transporte La Angostura) y desde Tzimol sigue en taxi hasta el cenote."
+      },
+      {
+        "nombre": "Uninajab", "imagen": "img/Atractivos/Uninajab.jpeg", "km": "27.5", "tiempo": "37 min",
+        "consultaMapa": "Uninajab, Chiapas",
+        "descripcion": "Centro ecoturístico con pozas de agua turquesa, pequeñas cascadas y un mirador con vista al valle. Por la carretera estatal 226 Comitán – La Angostura.",
+        "transporte": "Hay colectivos directos desde Comitán pocas veces al día (aprox. 7:00, 12:00 y 16:00). También puedes tomar el colectivo a Tzimol / El Chiflón en el Boulevard (Transporte La Angostura) y pedir que te bajen en el desvío a San Francisco Uninajab (unos 3 km a la entrada)."
+      },
+      {
+        "nombre": "Laguna Koilá", "imagen": "img/Atractivos/Laguna koila.jpeg", "km": "27.7", "tiempo": "40 min",
+        "consultaMapa": "Laguna Koilá, Chiapas",
+        "descripcion": "Laguna de color azul turquesa de unos 240 metros de diámetro y entre 80 y 120 metros de profundidad, apropiada para nadar y bucear. Cuenta con área de palapas y asadores.",
+        "transporte": "Toma un colectivo hacia Tzimol / La Angostura en el Boulevard Belisario Domínguez (Transporte La Angostura) y pide que te bajen en el desvío a la Laguna Koilá, sobre la carretera 226."
+      },
+      {
+        "nombre": "Cascadas del Chiflón", "imagen": "img/Atractivos/Cascada_Chiflon.jpeg", "km": "36.8", "tiempo": "46 min",
+        "consultaMapa": "Cascadas El Chiflón, Chiapas",
+        "descripcion": "Serie de cascadas de agua turquesa sobre el río San Vicente; la más alta, el Velo de Novia, mide unos 120 metros. Tiene senderos, pozas y tirolesa.",
+        "transporte": "En el Boulevard Belisario Domínguez sale el colectivo de Transporte La Angostura hacia Tzimol / Socoltenango. Pide que te bajen en El Chiflón; de ahí son unos 10 minutos caminando a la entrada. El regreso se toma en el lado opuesto de la carretera."
+      },
+      {
+        "nombre": "Chinkultic", "imagen": "img/Atractivos/Chinkultic.jpeg", "km": "49", "tiempo": "50 min",
+        "consultaMapa": "Zona Arqueológica Chinkultic, Chiapas",
+        "descripcion": "Zona arqueológica maya junto a un cenote, con una acrópolis desde la que se ven las lagunas de Montebello.",
+        "transporte": "Toma el colectivo Comitán – Lagos de Montebello (2a. Av. Poniente Sur, a la altura de la 2a. Calle Sur Poniente) y pide bajar en el crucero del ejido Miguel Hidalgo; de ahí se camina entre 1 y 2 km."
+      },
+      {
+        "nombre": "Xbulanjá", "imagen": "img/Atractivos/Xbulanja.jpeg", "km": "51.9", "tiempo": "2 h 32 min",
+        "consultaMapa": "Xbulanjá, Chiapas",
+        "descripcion": "Centro ecoturístico con cascadas y pozas de agua turquesa en plena naturaleza, cerca de Puente Santo Domingo.",
+        "transporte": "No hay un colectivo directo confirmado. Puedes tomar los colectivos que van por la Carretera Fronteriza (salen de la 4a. Av. Poniente Sur) y pedir bajar en el desvío; confirma con el chofer antes de subir."
+      },
+      {
+        "nombre": "Parque Nacional Lagunas de Montebello", "imagen": "img/Atractivos/Lagunas de Montebello.jpeg", "km": "59", "tiempo": "1 h",
+        "consultaMapa": "Parque Nacional Lagunas de Montebello, Chiapas",
+        "descripcion": "Reserva natural de 6,022 hectáreas con 59 lagunas en tonalidades que van del verde esmeralda al azul turquesa, rodeadas de bosque de pino. Carretera estatal 225, km 36, municipio de La Trinitaria.",
+        "transporte": "Los colectivos Comitán – Lagos de Montebello salen de la 2a. Av. Poniente Sur, a la altura de la 2a. Calle Sur Poniente (Transporte Montebello), aprox. cada 20 – 30 min. El trayecto es de una hora y recorre las principales lagunas."
+      },
+      {
+        "nombre": "Lago Tziscao", "imagen": "img/Atractivos/Lago tziscao.jpeg", "km": "60", "tiempo": "1 h",
+        "consultaMapa": "Lago Tziscao, Chiapas",
+        "descripcion": "El lago más grande de Montebello, en la frontera con Guatemala; se puede pasear en balsa, kayak y hospedarse en cabañas.",
+        "transporte": "Toma el colectivo Comitán – Lagos de Montebello en la 2a. Av. Poniente Sur, a la altura de la 2a. Calle Sur Poniente. La ruta termina en Tziscao."
+      },
+      {
+        "nombre": "Copanahuastla", "imagen": "img/Atractivos/Copanaguastla.jpeg", "km": "64.2", "tiempo": "1 h 21 min",
+        "consultaMapa": "Ex Convento de Copanaguastla, Socoltenango, Chiapas",
+        "descripcion": "Ruinas de un antiguo convento dominico del siglo XVI, abandonado desde el siglo XVII, con su gran fachada de estilo plateresco.",
+        "transporte": "No hay colectivo directo. Toma un colectivo hacia Socoltenango en el Boulevard Belisario Domínguez (Transporte La Angostura) y desde ahí sigue en taxi; el acceso final es de 4 km de terracería."
+      },
+      {
+        "nombre": "Lagos de Colón", "imagen": "img/Atractivos/Lagos Colón.jpeg", "km": "68.5", "tiempo": "1 h 12 min",
+        "consultaMapa": "Lagos de Colón, Chiapas",
+        "descripcion": "Conjunto de lagos de agua cristalina rodeados de selva, junto a la zona arqueológica de Lagartero, cerca de la frontera.",
+        "transporte": "Los colectivos salen del Boulevard Belisario Domínguez, entre la 1a. y 2a. Calle Sur Poniente (empresas TRF y TAOSA), aprox. de 5:00 a 15:00. Otra opción: colectivo a Chamic y de ahí taxi compartido a los lagos."
+      },
+      {
+        "nombre": "Las Nubes", "imagen": "img/Atractivos/Las nubes.jpeg", "km": "128", "tiempo": "3 h 15 min",
+        "consultaMapa": "Centro Ecoturístico Las Nubes, Chiapas",
+        "descripcion": "Centro ecoturístico a la orilla del río Santo Domingo, con cascadas y rápidos de agua turquesa, puente colgante y cabañas.",
+        "transporte": "Toma la Transportadora Tzobol, en la 4a. Av. Poniente Sur. El viaje dura unas 3 horas y hay pocas salidas al día, así que conviene ir temprano y confirmar horarios."
+      },
+      {
+        "nombre": "Miramar", "imagen": "img/Atractivos/Miramar.jpeg", "km": "150", "tiempo": "4 h", "nota": "+ 8 km de sendero: 1 h a caballo o 3 h a pie",
+        "consultaMapa": "Laguna Miramar, Chiapas",
+        "descripcion": "Laguna de aguas cristalinas en el corazón de la Selva Lacandona, dentro de la Reserva de la Biosfera Montes Azules.",
+        "transporte": "Toma un colectivo a Las Margaritas (en el Boulevard Belisario Domínguez) y ahí otro hacia San Quintín / Emiliano Zapata. Desde la comunidad se llega a la laguna por un sendero de 8 km, a pie o a caballo."
+      },
+      {
+        "nombre": "Selvaje", "imagen": "img/Atractivos/Selvaje.jpeg", "km": "205", "tiempo": "4 h 30 min",
+        "consultaMapa": "Selvaje, Chiapas",
+        "descripcion": "Centro ecoturístico en la selva, cerca de El Pirú, rodeado de ríos y vegetación tropical.",
+        "transporte": "No hay un colectivo directo confirmado desde Comitán. Se recomienda ir en auto o con un tour; también puedes preguntar en las terminales de la 4a. Av. Poniente Sur por los colectivos de la Carretera Fronteriza."
+      },
+      {
+        "nombre": "Canto de la Selva", "imagen": "img/Atractivos/Canto de la selva.jpeg", "km": "208", "tiempo": "4 h 40 min",
+        "consultaMapa": "Canto de la Selva, Chiapas",
+        "descripcion": "Centro ecoturístico en la región de la Selva Lacandona, con cascadas, senderos y avistamiento de fauna.",
+        "transporte": "No hay un colectivo directo confirmado desde Comitán. Se recomienda ir en auto o con un tour; también puedes preguntar en las terminales de la 4a. Av. Poniente Sur por los colectivos de la Carretera Fronteriza."
+      },
+      {
+        "nombre": "Las Guacamayas", "imagen": "img/Atractivos/Las guacamayas.jpeg", "km": "248", "tiempo": "5 h",
+        "consultaMapa": "Las Guacamayas, Reforma Agraria, Chiapas",
+        "descripcion": "Centro ecoturístico en Reforma Agraria, a la orilla del río Lacantún, famoso por el avistamiento de la guacamaya roja.",
+        "transporte": "No hay un colectivo directo confirmado desde Comitán. Se recomienda ir en auto o con un tour; también puedes preguntar en la Transportadora Tzobol (4a. Av. Poniente Sur) por las rutas de la Carretera Fronteriza."
+      }
     ]
   },
   {
     "titulo": "Distancia a ciudades principales",
     "destinos": [
-      { "nombre": "San Cristóbal de las Casas", "km": "93", "tiempo": "2 h", "consultaMapa": "San Cristóbal de las Casas, Chiapas" },
-      { "nombre": "Tuxtla Gutiérrez", "km": "149", "tiempo": "3 h", "consultaMapa": "Tuxtla Gutiérrez, Chiapas" },
-      { "nombre": "Palenque", "km": "228", "tiempo": "6 h", "consultaMapa": "Palenque, Chiapas" },
-      { "nombre": "Tapachula", "km": "241", "tiempo": "5 h", "consultaMapa": "Tapachula, Chiapas" }
+      {
+        "nombre": "San Cristóbal de las Casas", "imagen": "img/Atractivos/San Cristóbal de las casas.jpeg", "km": "93", "tiempo": "2 h",
+        "consultaMapa": "San Cristóbal de las Casas, Chiapas",
+        "descripcion": "Pueblo Mágico de los Altos de Chiapas, con calles coloniales, templos, mercados de artesanías y gran ambiente cultural.",
+        "transporte": "Autobuses OCC desde la Terminal de Autobuses (Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón). También hay colectivos y combis en el Boulevard Belisario Domínguez."
+      },
+      {
+        "nombre": "Tuxtla Gutiérrez", "imagen": "img/Atractivos/Tuxtla Gutiérrez.jpeg", "km": "149", "tiempo": "3 h",
+        "consultaMapa": "Tuxtla Gutiérrez, Chiapas",
+        "descripcion": "Capital de Chiapas y punto de partida al Cañón del Sumidero; cuenta con aeropuerto internacional.",
+        "transporte": "Autobuses OCC y ADO desde la Terminal de Autobuses (Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón)."
+      },
+      {
+        "nombre": "Palenque", "imagen": "img/Atractivos/Palenque.png", "km": "228", "tiempo": "6 h",
+        "consultaMapa": "Palenque, Chiapas",
+        "descripcion": "Pueblo Mágico famoso por su zona arqueológica maya en medio de la selva, Patrimonio de la Humanidad.",
+        "transporte": "Autobuses OCC / ADO desde la Terminal de Autobuses (Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón); consulta horarios, ya que hay pocas salidas directas."
+      },
+      {
+        "nombre": "Tapachula", "imagen": "img/Atractivos/Tapachula.jpeg", "km": "241", "tiempo": "5 h",
+        "consultaMapa": "Tapachula, Chiapas",
+        "descripcion": "Ciudad de la región del Soconusco, junto al volcán Tacaná, conocida por sus fincas cafetaleras.",
+        "transporte": "Autobuses OCC desde la Terminal de Autobuses (Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón)."
+      }
     ]
   }
 ];

@@ -192,10 +192,40 @@ function mostrarLugar(id) {
   const dir = document.getElementById('direccionLugar');
   dir.textContent = lugar.direccion ? '📍 ' + lugar.direccion : '';
   dir.hidden = !lugar.direccion;
+  document.getElementById('transporteLugar').hidden = true;
   const ruta = document.getElementById('rutaLugar');
   ruta.hidden = !!lugar.sinRuta;
   if (!lugar.sinRuta) ruta.href = urlRuta(lugar);
   if (!dialogo.open) dialogo.showModal();
+}
+
+/* Misma ventana de descripción, pero para un atractivo fuera de la ciudad */
+function mostrarAtractivo(d, grupo) {
+  const img = document.getElementById('imagenLugar');
+  img.hidden = !d.imagen;
+  img.onerror = () => { img.hidden = true; };
+  if (d.imagen) img.src = d.imagen;
+  img.alt = d.nombre;
+
+  document.getElementById('nombreLugar').textContent = d.nombre;
+  document.getElementById('categoriaLugar').textContent = grupo;
+  document.getElementById('descripcionLugar').textContent = d.descripcion || '';
+  const dir = document.getElementById('direccionLugar');
+  dir.textContent = `🚗 ${d.km} km · ⏱ ${d.tiempo} desde Comitán` + (d.nota ? ` (${d.nota})` : '');
+  dir.hidden = false;
+
+  const bloque = document.getElementById('transporteLugar');
+  document.getElementById('textoTransporte').textContent = d.transporte || '';
+  bloque.hidden = !d.transporte;
+
+  const ruta = document.getElementById('rutaLugar');
+  ruta.hidden = false;
+  ruta.href = urlAtractivo(d);
+  if (!dialogo.open) dialogo.showModal();
+}
+
+function urlAtractivo(d) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.consultaMapa || d.nombre)}`;
 }
 
 document.getElementById('cerrarDetalle').addEventListener('click', () => dialogo.close());
@@ -277,7 +307,7 @@ function iniciarMenuFlor() {
 }
 
 /* ---------- atractivos turísticos (ventana flotante con tarjetas) ---------- */
-function crearTarjetaAtractivo(d) {
+function crearTarjetaAtractivo(d, grupo) {
   const tarjeta = el('article', 'tarjeta-lugar tarjeta-atractivo');
   tarjeta.style.setProperty('--color-cat', '#5c2040');
 
@@ -293,12 +323,16 @@ function crearTarjetaAtractivo(d) {
   if (d.nota) cuerpo.appendChild(el('p', 'atractivo-nota', d.nota));
 
   const acciones = el('div', 'tarjeta-acciones');
+  const boton = el('button', 'ver-detalle', 'Ver descripción');
+  boton.type = 'button';
+  boton.setAttribute('aria-label', 'Ver descripción de ' + d.nombre);
+  boton.addEventListener('click', () => mostrarAtractivo(d, grupo));
   const ruta = el('a', 'ir-maps', 'Cómo llegar');
-  ruta.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.consultaMapa || d.nombre)}`;
+  ruta.href = urlAtractivo(d);
   ruta.target = '_blank';
   ruta.rel = 'noopener noreferrer';
   ruta.setAttribute('aria-label', 'Cómo llegar a ' + d.nombre + ' en Google Maps');
-  acciones.appendChild(ruta);
+  acciones.append(boton, ruta);
   cuerpo.appendChild(acciones);
   tarjeta.appendChild(cuerpo);
   return tarjeta;
@@ -314,7 +348,7 @@ function crearAtractivos() {
       titulo.style.backgroundColor = '#5c2040';
       titulo.append(el('span', '', grupo.titulo), el('span', 'titulo-contador', String(grupo.destinos.length)));
       const grid = el('div', 'lista-lugares');
-      grupo.destinos.forEach(d => grid.appendChild(crearTarjetaAtractivo(d)));
+      grupo.destinos.forEach(d => grid.appendChild(crearTarjetaAtractivo(d, grupo.titulo)));
       seccion.append(titulo, grid);
       contenedor.appendChild(seccion);
     });

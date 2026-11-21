@@ -6,7 +6,7 @@
   <title>Ruta Turística de Comitán de Domínguez</title>
   <meta name="description" content="Guía y mapa interactivo del centro histórico de Comitán de Domínguez: templos, museos, mercado, artesanías y transporte, con ruta en Google Maps.">
   <link rel="icon" type="image/png" href="img/logo_visitcomitan_pag.png">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=5">
 </head>
 <body>
 
@@ -763,6 +763,11 @@
       <h2 id="nombreLugar"></h2>
       <p id="descripcionLugar"></p>
       <p id="direccionLugar" class="detalle-direccion"></p>
+      <div id="transporteLugar" class="detalle-transporte" hidden>
+        <h3>🚌 Cómo llegar en urbana o colectivo</h3>
+        <p id="textoTransporte"></p>
+        <p class="detalle-aviso">Los puntos de salida y horarios pueden cambiar; confírmalos con el chofer.</p>
+      </div>
       <div class="detalle-acciones">
         <a id="rutaLugar" class="boton-maps primario" target="_blank" rel="noopener noreferrer">📍 Cómo llegar desde mi ubicación</a>
       </div>
@@ -797,7 +802,7 @@
   </nav>
 
   <script src="data/lugares.js?v=2"></script>
-  <script src="data/atractivos.js?v=2"></script>
-  <script src="js/script.js?v=3"></script>
+  <script src="data/atractivos.js?v=3"></script>
+  <script src="js/script.js?v=4"></script>
 </body>
 </html>

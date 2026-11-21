@@ -9,13 +9,13 @@ const ATRACTIVOS = [
         "nombre": "Junchavín", "imagen": "img/Atractivos/Junchavin.jpeg", "km": "2", "tiempo": "7 min",
         "consultaMapa": "Zona Arqueológica Junchavín, Comitán, Chiapas",
         "descripcion": "Sitio arqueológico maya en la cima de un cerro, muy cerca de la ciudad, con vista panorámica del valle de Comitán.",
-        "transporte": "Toma un taxi en el sitio de taxis del Parque Central y pide que te lleve a la zona arqueológica Junchavín (está a solo 2 km del centro)."
+        "transporte": "Toma un Colectivo que vaya para Quija y que te baje en Junchavin o puedes tomar un taxi de sitio en el Parque Central y pide que te lleve a la zona arqueológica Junchavín."
       },
       {
         "nombre": "Tenam Puente", "imagen": "img/Atractivos/Tenam_Puente.jpeg", "km": "11.6", "tiempo": "18 min",
         "consultaMapa": "Zona Arqueológica Tenam Puente, Chiapas",
         "descripcion": "Zona arqueológica maya sobre un lomerío, con acrópolis, plazas y juegos de pelota rodeados de bosque.",
-        "transporte": "Toma la camioneta colectiva que va al ejido Francisco Sarabia, en el Boulevard Belisario Domínguez, cerca del mercado, y pide que te bajen en la entrada de la zona arqueológica."
+        "transporte": "Toma el transporte Ejidal Tenam Puente Sale de Comitán y llega a la zona arqueológica, o toma la camioneta colectiva que va al ejido Francisco Sarabia, en el Boulevard Belisario Domínguez, cerca del mercado, y pide que te bajen en la entrada de la zona arqueológica."
       },
       {
         "nombre": "Chukumaltic", "imagen": "img/Atractivos/Chucumaltik.jpeg", "km": "26.9", "tiempo": "34 min",
@@ -81,7 +81,7 @@ const ATRACTIVOS = [
         "nombre": "Las Nubes", "imagen": "img/Atractivos/Las nubes.jpeg", "km": "128", "tiempo": "3 h 15 min",
         "consultaMapa": "Centro Ecoturístico Las Nubes, Chiapas",
         "descripcion": "Centro ecoturístico a la orilla del río Santo Domingo, con cascadas y rápidos de agua turquesa, puente colgante y cabañas.",
-        "transporte": "Colectivo de Transportadora Tzobol, en la 4a. Av. Poniente Sur. El viaje dura unas 3 horas y hay pocas salidas al día, así que conviene salir temprano."
+            "transporte": "Hay dos líneas que te llevan desde Comitán. 1) Línea Comitán Montebello (terminal en el Barrio Guadalupe): toma la ruta hacia Benemérito de las Américas, que pasa por los Lagos de Montebello y sigue por la Carretera Fronteriza; pide que te bajen en el crucero de Jerusalén, donde está la señal de Las Nubes, y de ahí toma un taxi colectivo, unos 20 minutos por terracería pasando por Nueva Jerusalén y La Fortuna. 2) Transportadora Tzobol (4a. Av. Poniente Sur, tel. 963 632 7739): hace el mismo recorrido; al subir pregunta si entra hasta Las Nubes o te deja en el crucero de Jerusalén. El viaje dura unas 3 horas. Las salidas desde Comitán suelen ser por la tarde y los regresos muy temprano, así que lo mejor es quedarte a dormir en las cabañas del centro ecoturístico. Confirma horarios antes de viajar.",
       },
       {
         "nombre": "Miramar", "imagen": "img/Atractivos/Miramar.jpeg", "km": "150", "tiempo": "4 h", "nota": "+ 8 km de sendero: 1 h a caballo o 3 h a pie",
@@ -93,19 +93,19 @@ const ATRACTIVOS = [
         "nombre": "Selvaje", "imagen": "img/Atractivos/Selvaje.jpeg", "km": "205", "tiempo": "4 h 30 min",
         "consultaMapa": "Selvaje, Chiapas",
         "descripcion": "Centro ecoturístico en la selva, cerca de El Pirú, rodeado de ríos y vegetación tropical.",
-        "transporte": "No hay colectivo directo desde Comitán; se recomienda ir en auto o con un tour. La opción más cercana es Transportadora Tzobol, en la 4a. Av. Poniente Sur, que recorre la Carretera Fronteriza."
+        "transporte": "No hay colectivo directo desde Comitán; se recomienda ir en auto o con un tour. Contactalos a traves de sus redes sociales."
       },
       {
         "nombre": "Canto de la Selva", "imagen": "img/Atractivos/Canto de la selva.jpeg", "km": "208", "tiempo": "4 h 40 min",
         "consultaMapa": "Canto de la Selva, Chiapas",
         "descripcion": "Centro ecoturístico en la región de la Selva Lacandona, con cascadas, senderos y avistamiento de fauna.",
-        "transporte": "No hay colectivo directo desde Comitán; se recomienda ir en auto o con un tour. La opción más cercana es Transportadora Tzobol, en la 4a. Av. Poniente Sur, que recorre la Carretera Fronteriza."
+        "transporte": "No hay colectivo directo desde Comitán; se recomienda ir en auto o con un tour."
       },
       {
         "nombre": "Las Guacamayas", "imagen": "img/Atractivos/Las guacamayas.jpeg", "km": "248", "tiempo": "5 h",
         "consultaMapa": "Las Guacamayas, Reforma Agraria, Chiapas",
         "descripcion": "Centro ecoturístico en Reforma Agraria, a la orilla del río Lacantún, famoso por el avistamiento de la guacamaya roja.",
-        "transporte": "No hay colectivo directo desde Comitán; se recomienda ir en auto o con un tour. La opción más cercana es Transportadora Tzobol, en la 4a. Av. Poniente Sur, que recorre la Carretera Fronteriza."
+        "transporte": "No hay colectivo directo desde Comitán; se recomienda ir en auto o con un tour. La opción más cercana es Transportadora lagos de Montebello o Tzobol."
       }
     ]
   },
@@ -116,25 +116,25 @@ const ATRACTIVOS = [
         "nombre": "San Cristóbal de las Casas", "imagen": "img/Atractivos/San Cristóbal de las casas.jpeg", "km": "93", "tiempo": "2 h",
         "consultaMapa": "San Cristóbal de las Casas, Chiapas",
         "descripcion": "Pueblo Mágico de los Altos de Chiapas, con calles coloniales, templos, mercados de artesanías y gran ambiente cultural.",
-        "transporte": "Autobuses OCC desde la Terminal de Autobuses OCC / ADO, Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón."
+            "transporte": "Puedes llegar en autobús ADO u OCC desde la terminal de autobuses de Comitán, ubicada en Blvd. Sur Belisario Domínguez No. 43, Barrio Cristóbal Colón, con salidas a lo largo del día y un viaje de unas 2 horas. También hay urbans y colectivos más económicos que salen de pequeñas terminales en el Boulevard, entre la 1a y 2a Calle Sur Poniente, cerca del centro; salen con frecuencia y el viaje dura alrededor de 1 h 30 min.",
       },
       {
         "nombre": "Tuxtla Gutiérrez", "imagen": "img/Atractivos/Tuxtla Gutiérrez.jpeg", "km": "149", "tiempo": "3 h",
         "consultaMapa": "Tuxtla Gutiérrez, Chiapas",
         "descripcion": "Capital de Chiapas y punto de partida al Cañón del Sumidero; cuenta con aeropuerto internacional.",
-        "transporte": "Autobuses OCC y ADO desde la Terminal de Autobuses OCC / ADO, Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón."
+            "transporte": "Puedes llegar en autobús ADO u OCC desde la terminal de autobuses de Comitán, ubicada en Blvd. Sur Belisario Domínguez No. 43, Barrio Cristóbal Colón, con varias salidas al día. También puedes tomar las camionetas de la línea La Angostura, en la Calle Central Benito Juárez No. 27, Centro, que hacen la ruta Comitán–Tuxtla y salen con frecuencia durante el día.",
       },
       {
         "nombre": "Palenque", "imagen": "img/Atractivos/Palenque.png", "km": "228", "tiempo": "6 h",
         "consultaMapa": "Palenque, Chiapas",
         "descripcion": "Pueblo Mágico famoso por su zona arqueológica maya en medio de la selva, Patrimonio de la Humanidad.",
-        "transporte": "Autobuses OCC / ADO desde la Terminal de Autobuses OCC / ADO, Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón; hay pocas salidas directas al día."
+            "transporte": "Puedes llegar en autobús OCC desde la terminal de autobuses de Comitán, ubicada en Blvd. Sur Belisario Domínguez No. 43, Barrio Cristóbal Colón; el viaje es largo, de unas 9 a 11 horas, porque pasa por San Cristóbal de las Casas. Tambien puedes tomar transporte a Palenque en la linea Lagos de Montebello. Conviene salir temprano.",
       },
       {
         "nombre": "Tapachula", "imagen": "img/Atractivos/Tapachula.jpeg", "km": "241", "tiempo": "5 h",
         "consultaMapa": "Tapachula, Chiapas",
         "descripcion": "Ciudad de la región del Soconusco, junto al volcán Tacaná, conocida por sus fincas cafetaleras.",
-        "transporte": "Autobuses OCC desde la Terminal de Autobuses OCC / ADO, Blvd. Belisario Domínguez Sur No. 43, Barrio Cristóbal Colón."
+            "transporte": "Puedes llegar en autobús OCC desde la terminal de autobuses de Comitán, ubicada en Blvd. Sur Belisario Domínguez No. 43, Barrio Cristóbal Colón, con un viaje de unas 5 h 30 min. Si prefieres una opción más económica, puedes ir en urbans por tramos: primero de Comitán a Motozintla con la línea La Angostura (unas 4 horas), después de Motozintla a Huixtla en colectivo o urban (alrededor de 1 h 30 min) y finalmente de Huixtla a Tapachula en urban, por ejemplo con Rápidos del Sur (unos 45 minutos).",
       }
     ]
   }

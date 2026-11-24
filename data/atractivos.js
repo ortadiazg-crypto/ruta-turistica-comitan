@@ -72,7 +72,7 @@ const ATRACTIVOS = [
         "transporte": "Colectivo a Socoltenango de Transportes La Angostura, en la Calle Central Benito Juárez No. 27, Centro. En Socoltenango toma un taxi hasta el ex convento; el acceso final es de 4 km de terracería."
       },
       {
-        "nombre": "Lagos de Colón", "imagen": "img/Atractivos/Lagos Colón.jpeg", "km": "68.5", "tiempo": "1 h 12 min",
+        "nombre": "Lagos de Colón", "imagen": "img/Atractivos/Lagos_Colon.jpeg", "km": "68.5", "tiempo": "1 h 12 min",
         "consultaMapa": "Lagos de Colón, Chiapas",
         "descripcion": "Conjunto de lagos de agua cristalina rodeados de selva, junto a la zona arqueológica de Lagartero, cerca de la frontera.",
         "transporte": "Toma los colectivos que van a Frontera Comalapa: Transportes Rápidos de la Frontera (TRF) o TAOSA, en el Boulevard Belisario Domínguez, entre la 1a. y 2a. Calle Sur Poniente. Bájate en Chamic (aprox. 1 h) y ahí toma un taxi compartido hasta los Lagos de Colón (aprox. 20 min)."
@@ -113,13 +113,13 @@ const ATRACTIVOS = [
     "titulo": "Distancia a ciudades principales",
     "destinos": [
       {
-        "nombre": "San Cristóbal de las Casas", "imagen": "img/Atractivos/San Cristóbal de las casas.jpeg", "km": "93", "tiempo": "2 h",
+        "nombre": "San Cristóbal de las Casas", "imagen": "img/Atractivos/San_Cristobal.jpeg", "km": "93", "tiempo": "2 h",
         "consultaMapa": "San Cristóbal de las Casas, Chiapas",
         "descripcion": "Pueblo Mágico de los Altos de Chiapas, con calles coloniales, templos, mercados de artesanías y gran ambiente cultural.",
             "transporte": "Puedes llegar en autobús ADO u OCC desde la terminal de autobuses de Comitán, ubicada en Blvd. Sur Belisario Domínguez No. 43, Barrio Cristóbal Colón, con salidas a lo largo del día y un viaje de unas 2 horas. También hay urbans y colectivos más económicos que salen de pequeñas terminales en el Boulevard, entre la 1a y 2a Calle Sur Poniente, cerca del centro; salen con frecuencia y el viaje dura alrededor de 1 h 30 min.",
       },
       {
-        "nombre": "Tuxtla Gutiérrez", "imagen": "img/Atractivos/Tuxtla Gutiérrez.jpeg", "km": "149", "tiempo": "3 h",
+        "nombre": "Tuxtla Gutiérrez", "imagen": "img/Atractivos/Tuxtla_Gutierrez.jpeg", "km": "149", "tiempo": "3 h",
         "consultaMapa": "Tuxtla Gutiérrez, Chiapas",
         "descripcion": "Capital de Chiapas y punto de partida al Cañón del Sumidero; cuenta con aeropuerto internacional.",
             "transporte": "Puedes llegar en autobús ADO u OCC desde la terminal de autobuses de Comitán, ubicada en Blvd. Sur Belisario Domínguez No. 43, Barrio Cristóbal Colón, con varias salidas al día. También puedes tomar las camionetas de la línea La Angostura, en la Calle Central Benito Juárez No. 27, Centro, que hacen la ruta Comitán–Tuxtla y salen con frecuencia durante el día.",
